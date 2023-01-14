@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>results</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+        <h1> welcome to love calculator </h1>
+        <h3>insert your names to get your capability percentage</h3>
+        <form method="post"  action="/" class="form">
+            <div class="form_item">
+            {{ form.csrf_token }}
+            {{ form.first_name.label }}
+                </div>
+                <div class="form_item">
+                {{ form.first_name(size=20) }}
+                    </div>
+                <div class="form_item">
+            {{ form.sec_name.label }}
+                    </div>
+                    <div class="form_item">
+                    {{ form.sec_name(size=20) }}
+            </div>
+            <div class="form_item">
+                <input type="submit" value="Submit" class="button">
+            </div>
+        </form>
+            {% if percentage <= 10 or percentage >=90 %}
+            <h2 style="color:red">capability is {{ percentage }}% and</h2>
+            {% elif 40 <= percentage <=50 %}
+            <h2 style="color:green">capability is {{ percentage }}% and</h2>
+            {% else %}
+            <h2 style="color:orange">capability is {{ percentage }}% and</h2>
+            {% endif %}
+            <h2>{{ results }}</h2>
+            </div>
+    </body>
+</html>

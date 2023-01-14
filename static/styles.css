@@ -1,0 +1,24 @@
+body {
+background-color:skyblue;
+font-size: 1rem;
+text-align: center;
+}
+
+.container {
+padding:2%;
+}
+
+.form_item {
+padding: 4px;
+}
+.button {
+padding: 1% 12%;
+margin: 1%;
+background-color:green;
+border:2px solid yellow;
+}
+
+.button:hover {
+background-color:blue,
+border:2px solid green;
+}
